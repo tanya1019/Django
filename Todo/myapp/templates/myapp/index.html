@@ -1,0 +1,52 @@
+{%extends 'myapp/base.html'%}
+
+{%block body%}
+
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-12">
+            <div class = "banner">
+                <div class = "banner-text">
+                    <h1>TODO</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class = "col-md-6">
+            <h4>Add Task</h4>
+            <form class = 'p-3 shadow' method="POST">
+                {%csrf_token%}
+                <div class = 'form-group'>
+                <input type="text" class = 'form-control' name = "name" id = 'name' placeholder = "Enter the Task">
+                </div>
+                <div class = 'form-group'>
+                    <input type="date" class = 'form-control' name = "date" id = 'date' >
+                    </div>
+                <div class = 'form-group'>
+               <input type="text" class = 'form-control' name='priority' id='priority' placeholder ="Enter the task priority">
+                </div>
+                
+                <input class = 'btn btn-success' type="submit">
+            </form>
+        </div>
+        <div class = "col-md-6">
+            <h4>Task To Be Completed</h4>
+            {%for task in task_list%}
+            <div class = "card shadow">
+                <div class = "card-body">
+                    <h5 class = "card-title"> {{task.name}}</h5>
+                    <p><b>{{task.priority}}</b></p>
+                    <p><b>{{task.date}}</b></p>
+                    <a class = "btn btn-danger" href="{%url 'delete' task.id %}">Done</a>
+                    <a class = 'btn btn-success' href="{%url 'update' task.id%}">Edit</a>
+                </div>
+            </div>
+            <br>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+{%endblock%}
