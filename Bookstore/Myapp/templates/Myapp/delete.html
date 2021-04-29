@@ -1,0 +1,18 @@
+{% extends 'Myapp/base.html' %}
+
+{% block body%}
+
+
+<form method="POST">
+
+    {%csrf_token%}
+
+    Are you sure you want to delete the file?
+
+    <input type = "submit">
+
+
+
+</form>
+
+{%endblock%}

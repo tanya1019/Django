@@ -3,7 +3,8 @@ from .models import Task
 from .form import TodoForm
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
-# Create your views here.
+
+#CLASS BASED VIEWS
 
 class TaskListView(ListView):
     model = Task
@@ -16,19 +17,7 @@ class TaskDetailView(DetailView):
     context_object_name = 'task'
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#FUNCTION BASED VIEWS
 
 def index(request):
     task_list = Task.objects.all()
