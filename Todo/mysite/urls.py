@@ -23,4 +23,5 @@ urlpatterns = [
     path('update/<int:id>/', views.update, name='update'),
     path('cbvindex/', views.TaskListView.as_view(), name = 'cbvindex'),
     path('cbvdetail/<int:pk>/', views.TaskDetailView.as_view(), name = 'cbvdetail'),
+    path('cbvupdate/<int:pk>/', views.TaskUpdateView.as_view(), name = 'cbvupdate'),
 ]
