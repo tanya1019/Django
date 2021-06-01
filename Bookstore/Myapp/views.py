@@ -27,12 +27,14 @@ def add_book(request):
     if request.method == "POST":
         
         name = request.POST.get('name',)
+        author = request.POST.get('author',)
         decs = request.POST.get('decs',)
         price = request.POST.get('price',)
         book_image = request.FILES['book_image']
 
-        book = BookStore(name=name, decs=decs, price=price, book_image=book_image)
+        book = BookStore(name=name, decs=decs, price=price, book_image=book_image, author=author)
         book.save()
+        return redirect('/')
     return render(request, 'Myapp/add_book.html')
 
 def update(request,id):

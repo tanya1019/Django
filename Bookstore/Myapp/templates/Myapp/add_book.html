@@ -4,9 +4,10 @@
 
 <form method="POST"  enctype="multipart/form-data">
     {% csrf_token %}
-    <input type = "text" name = "name" id = "name" placeholder=" Enter your name">
-    <input type = "text" name = "decs" id = "decs" placeholder=" Enter your decs">
-    <input type = "text" name = "price" id = "price" placeholder=" Enter the price">
+    <input type = "text" name = "name" id = "name" placeholder=" Enter your name"><br><br>
+    <input type = "text" name = "author" id = "author" placeholder=" Enter name of author"><br><br>
+    <input type = "text" name = "decs" id = "decs" placeholder=" Enter your decs"><br><br>
+    <input type = "text" name = "price" id = "price" placeholder=" Enter the price"><br><br>
     <input type = "file" name = "book_image" id = "book_image"> <br><br>
     <input type = "submit" name = ""  id = "">
 </form>

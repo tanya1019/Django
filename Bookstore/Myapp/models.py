@@ -10,4 +10,5 @@ class BookStore(models.Model):
     name = models.CharField(max_length = 100)
     decs = models.CharField(max_length= 300)
     price = models.IntegerField()
+    author = models.CharField(max_length = 100, default="")
     book_image = models.ImageField(default = 'default.jpg', upload_to = 'book_images/')

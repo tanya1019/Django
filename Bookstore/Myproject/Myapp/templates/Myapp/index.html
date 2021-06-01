@@ -1,0 +1,12 @@
+
+<html>
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+   {% for book in book_list %}
+   <a href = {% url 'detail' book.id %}> {{book.name}}</a> <br>
+   {% endfor %}
+</body>
+</html>S

@@ -6,20 +6,20 @@
             {%for book in book_list%}
             <div class = "col-md-3">
                 <div class = "card">
-                    <img width = '100' height = '100' src = "{{book.book_image.url}}" class = "card-img-top" alt="">
+                    <img width = '200' height = '250' src = "{{book.book_image.url}}" class = "card-img-top" alt="">
                     <div class = "card-body">
                         <h5 class = "card-title"> {{book.name}} </h5>
                         <p class = "card-text">${{book.price}} </p>
+                        <p class = "card-title">{{book.author}} </p>
                         <a class = "btn btn-warning" href="{% url 'Myapp:Detail' book.id%}">View Detail</a> <br>
                     </div>
                 </div>
             </div>
             {%endfor%}
         </div>
+        <br> <br>
+        <a class = 'btn btn-success' href="{% url 'Myapp:add_book' %}"> ADD YOUR BOOK </a>
     </div>
-
-<br> <br><br>
-<a class = 'btn btn-warning' href="{% url 'Myapp:add_book' %}"> ADD YOUR BOOK </a>
 
 
 {%endblock%}

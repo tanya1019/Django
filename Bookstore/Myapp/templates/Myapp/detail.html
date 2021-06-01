@@ -5,18 +5,25 @@
 
     <div class = "container">
         <div class = "row">
+            
             <div class = "col-md-6">
                 <img width = '300' height = '300' src = '{{book.book_image.url}}'>
             </div>
+
             <div class = "col-md-6">
+
                 <h1>{{book.name}}</h1> 
                 <h3>{{book.decs}}</h3> 
-                <h4>{{book.price}}</h4> 
-
+                <h4>{{book.author}}</h4>
+                <h4>${{book.price}}</h4> 
+                
+                <br> <br>
+                 
                 <a class = 'btn btn-warning' href="{% url 'Myapp:update' book.id%}">Update</a>
                 <a class = 'btn btn-danger' href="{% url 'Myapp:delete' book.id%}">DELETE</a> 
                 <a class = "btn btn-primary" href="{% url 'Myapp:index'%}">HOME</a>
             </div>
+        
         </div>
     </div>
 
